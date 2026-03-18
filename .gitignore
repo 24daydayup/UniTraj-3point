@@ -1,0 +1,61 @@
+# Exclude specified directories and files
+__pycache__/
+data/
+trae/
+UniTraj/
+toy_dump/
+results/
+
+# Common Python exclusions
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+*.so
+.Python
+
+# Environment and IDE files
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Logs and temporary files
+*.log
+*.tmp
+*.temp
+
+# Data files
+*.csv
+*.json
+*.pkl
+*.pickle
+*.h5
+*.hdf5
+
+# Model files
+*.pt
+*.pth
+*.bin
+*.onnx
+
+# Results directory
+results/

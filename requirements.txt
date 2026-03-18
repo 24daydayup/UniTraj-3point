@@ -1,0 +1,7 @@
+torch>=1.12
+numpy>=1.23
+pandas>=1.5
+tqdm>=4.64
+colored>=2.2
+rdp>=0.8
+geopy>=2.3
