@@ -52,14 +52,14 @@
    - 相对 UniTraj 差异：UniTraj 的 patch 主要为 MAE 重建；此处 patch 仅影响条件，不改变生成器输入输出，轻量可插拔。
    - 写作表述：可描述为“条件侧可插拔的自适应 patch 语义增强，点-片双向耦合提升曲率敏感度”。
 
-3. **稀疏 MoE + 频域一致性联合稳态建模**
+3. **稀疏 MoE + 频域一致性联合稳定建模**
    - 技术本质：DiTBlock 可选 `SparseMoE` （Top-k 专家），在 `compute_spectral_loss` 中对速度场幅值/相位施加频域约束，稳定长序列振荡。
    - 代码依据：`utils/flow_matching.py::SparseMoE / DiTBlock / compute_spectral_loss`，`main.py::config.model.use_spectral_loss`。
    - 新意 vs 常规：MoE 在条件统一的同时分配专家处理不同运动模式；频域 loss 抑制高频噪声，兼顾平滑与细节。
    - 相对 UniTraj 差异：UniTraj 主干以标准 Transformer + 扩散损失为主；本实现把 MoE 与频域约束并入单阶段训练，提升稳定性而不增加额外阶段。
    - 写作表述：可表述为“稀疏专家路由结合频域一致性，降低长序列振荡并保持细节”。
 
-## 5）总结：3 个可直接写进文章的创新点
+## 5）总结：可直接写进文章的 3 个亮点
 
 1. **单阶段线性 Flow Matching 速度场统一补全/预测**——掩码约束、训练-采样同轨迹，免扩散反演。  
 2. **条件侧自适应 Patch + 点-片融合**——动态 patch 复杂度感知，轻量增强局部形变表达且保持点级生成。  
